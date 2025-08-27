@@ -56,12 +56,19 @@
       font-weight:800; font-size:40px; letter-spacing:.5px;
       text-shadow:0 6px 20px rgba(0,0,0,.6);
     }
-    .badge{
-      display:inline-block; margin:6px auto 18px; padding:6px 12px;
-      font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-      color:#0a2a21; background:linear-gradient(90deg, #00d084, #54ffbd);
-      border-radius:999px; font-weight:700;
-    }
+.badge{
+  display:inline-block; 
+  margin:6px 0 18px;  /* manja margina odozdo */
+  padding:2px 8px;    /* smanjen padding */
+  font-size:12px; 
+  letter-spacing:.12em; 
+  text-transform:uppercase;
+  color:#0a2a21; 
+  background:linear-gradient(90deg, #00d084, #54ffbd);
+  border-radius:999px; 
+  font-weight:700;
+}
+
 
     .bio ul{
       text-align:left;
@@ -96,7 +103,7 @@
 
     .cta-text{
       font-size:20px;
-      margin:10px 0 16px;
+      margin:0 0 16px;
       font-weight:600;
       color:var(--text);
     }
@@ -111,6 +118,7 @@
       box-shadow:0 0 28px var(--glow);
       transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
       animation:pulse 2.2s infinite;
+      margin-bottom:20px;
     }
     .btn:hover{ transform:scale(1.06); box-shadow:0 0 46px rgba(0,208,132,.95); filter:saturate(1.1) }
     .btn:active{ transform:scale(1.02) }
@@ -154,6 +162,18 @@
     <div class="brand">XAUUSD Scalper</div>
     <span class="badge">Live Signals</span>
 
+    <!-- CTA TEXT -->
+    <div class="cta-text">🚀 Join 500+ traders & start receiving signals today</div>
+
+    <!-- JOIN BUTTON -->
+    <a class="btn" href="https://t.me/gold_xauusd_scalper" target="_blank" rel="noopener">
+      <svg class="tg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="120" cy="120" r="120" fill="#fff"></circle>
+        <path d="M179.9 69.7 158 165.6c-1.6 7-5.9 8.7-12 5.4l-33.2-24.5-16 15.4c-1.8 1.8-3.3 3.3-6.8 3.3l2.4-34.2 62.2-56.2c2.7-2.4-.6-3.8-4.2-1.4l-76.9 48.4-33.1-10.3c-7.2-2.2-7.4-7.2 1.5-10.7l129.4-49.9c6-2.2 11.3 1.4 9.3 10.6z" fill="#0088cc"/>
+      </svg>
+      JOIN NOW
+    </a>
+
     <!-- BIO / DESCRIPTION -->
     <p class="bio">Free XAUUSD scalping signals and trading tips.</p>
 
@@ -173,18 +193,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <div class="cta-text">🚀 Join 500+ traders & start receiving signals today</div>
-
-    <!-- JOIN BUTTON -->
-    <a class="btn" href="https://t.me/gold_xauusd_scalper" target="_blank" rel="noopener">
-      <svg class="tg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="120" cy="120" r="120" fill="#fff"></circle>
-        <path d="M179.9 69.7 158 165.6c-1.6 7-5.9 8.7-12 5.4l-33.2-24.5-16 15.4c-1.8 1.8-3.3 3.3-6.8 3.3l2.4-34.2 62.2-56.2c2.7-2.4-.6-3.8-4.2-1.4l-76.9 48.4-33.1-10.3c-7.2-2.2-7.4-7.2 1.5-10.7l129.4-49.9c6-2.2 11.3 1.4 9.3 10.6z" fill="#0088cc"/>
-      </svg>
-      JOIN NOW
-    </a>
-
     <!-- Lightweight Ticker -->
     <div class="ticker" aria-label="market-ticker">
       <div class="row">
@@ -201,10 +209,5 @@
 
     <footer>*Win-rate is indicative and varies with market conditions. Trade responsibly.</footer>
   </main>
-
-  <!-- TikTok Pixel / Google Tag (paste your script here) -->
-
 </body>
 </html>
-
-
