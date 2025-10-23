@@ -7,100 +7,54 @@
 <style>
   body {
     margin: 0;
-    font-family: "Poppins", sans-serif;
     background: #0f0f0f;
-    color: #fff;
-    line-height: 1.6;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  h1, h2, h3 {
-    margin: 0;
-  }
-
-  /* --- Hero Section --- */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 20px;
+  }
+
+  /* Hero Section */
+  .hero {
+    max-width: 900px;         /* manja širina */
+    margin: 0 auto 40px;      /* centrirano + razmak dole */
+    padding: 40px 20px;
     background: linear-gradient(135deg, #007bff, #00d4ff);
+    border-radius: 16px;
+    color: #fff;
   }
 
   .hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin: 0 0 15px;
   }
 
   .hero p {
-    font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    margin: 0;
   }
 
-  .btn-hero {
-    padding: 12px 25px;
-    background: #fff;
-    color: #007bff;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: 0.2s;
-  }
-
-  .btn-hero:hover {
-    background: #00d4ff;
-    color: #fff;
-  }
-
-  /* --- Benefits Section --- */
-  .benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  .benefit-card {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 30px 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    transition: transform 0.3s, background 0.3s;
-  }
-
-  .benefit-card:hover {
-    transform: translateY(-5px);
-    background: #222;
-  }
-
-  .benefit-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #00d4ff;
-  }
-
-  .benefit-card p {
-    font-size: 14px;
-    color: #ccc;
-  }
-
-  /* --- Plans Section --- */
+  /* Plans Section */
   .plans {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    justify-items: center;
+    width: 100%;
     max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .plans {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 400px) {
+    .plans {
+      grid-template-columns: 1fr;
+    }
   }
 
   .plan {
@@ -108,6 +62,7 @@
     color: #000;
     border-radius: 12px;
     padding: 20px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,8 +78,8 @@
   }
 
   .plan-header h2 {
+    margin: 0 0 10px;
     font-size: 20px;
-    margin-bottom: 10px;
   }
 
   .plan-price {
@@ -145,6 +100,7 @@
     background: #007bff;
     color: #fff;
     border-radius: 6px;
+    text-decoration: none;
     font-weight: 500;
     transition: 0.2s;
   }
@@ -152,102 +108,32 @@
   .buy-btn:hover {
     background: #00b4ff;
   }
-
-  /* --- FAQ Section --- */
-  .faq {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-  }
-
-  .faq h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #00d4ff;
-  }
-
-  .faq-item {
-    background: #1a1a1a;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-  }
-
-  .faq-item h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .faq-item p {
-    font-size: 14px;
-    color: #ccc;
-  }
-
-  /* --- Footer --- */
-  footer {
-    background: #111;
-    color: #777;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-  }
-
-  footer a {
-    color: #00d4ff;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
 </style>
 </head>
 <body>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h1>🚀 Join Forex VIP Today!</h1>
-    <p>Get exclusive signals, expert analyses, and daily updates directly to your VIP channel. Choose the plan that suits you best and start profiting now!</p>
-    <a href="#plans" class="btn-hero">See Plans</a>
-  </section>
-
-  <!-- Benefits Section -->
-  <section class="benefits">
-    <div class="benefit-card">
-      <h3>Daily Signals</h3>
-      <p>Receive accurate Forex signals every day to maximize your profits.</p>
-    </div>
-    <div class="benefit-card">
-      <h3>VIP Chat Support</h3>
-      <p>Get direct access to expert advice in our exclusive chat.</p>
-    </div>
-    <div class="benefit-card">
-      <h3>Exclusive Analyses</h3>
-      <p>Daily market analyses and tips only available to VIP members.</p>
-    </div>
-    <div class="benefit-card">
-      <h3>Lifetime Updates</h3>
-      <p>For lifetime members, receive all future signals and content for free.</p>
-    </div>
-  </section>
+  <div class="hero">
+    <h1>🚀 Forex VIP Access</h1>
+    <p>Choose your plan and get exclusive daily signals and analysis!</p>
+  </div>
 
   <!-- Plans Section -->
-  <section id="plans" class="plans">
+  <div class="plans">
     <div class="plan">
       <div class="plan-header">
-        <h2>Weekly Membership</h2>
+        <h2>Weekly Plan</h2>
         <div class="plan-price">$20</div>
       </div>
       <div class="plan-description">
-        Access to VIP channels for 7 days, daily signals, and exclusive analyses.
+        7 days access to VIP channels, daily signals and exclusive analyses.
       </div>
       <a href="plan_weekly.html" class="buy-btn">BUY</a>
     </div>
 
     <div class="plan">
       <div class="plan-header">
-        <h2>Monthly Membership</h2>
+        <h2>Monthly Plan</h2>
         <div class="plan-price">$35</div>
       </div>
       <div class="plan-description">
@@ -258,37 +144,15 @@
 
     <div class="plan">
       <div class="plan-header">
-        <h2>Lifetime Membership</h2>
+        <h2>Lifetime Plan</h2>
         <div class="plan-price">$60</div>
       </div>
       <div class="plan-description">
-        Unlimited access to all VIP content, signals, and exclusive analyses forever.
+        Unlimited access to all VIP content, signals and exclusive analyses forever.
       </div>
       <a href="plan_lifetime.html" class="buy-btn">BUY</a>
     </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What do I get with the VIP membership?</h3>
-      <p>Daily signals, exclusive analyses, VIP chat support, and access to our private channel.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How long does each plan last?</h3>
-      <p>Weekly is 7 days, Monthly is 30 days, and Lifetime is unlimited access forever.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can I upgrade my plan later?</h3>
-      <p>Yes! You can upgrade from Weekly or Monthly to Lifetime anytime.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Forex VIP. All rights reserved. | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
-  </footer>
+  </div>
 
 </body>
 </html>
