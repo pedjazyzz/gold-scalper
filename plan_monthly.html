@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Month – VIP</title>
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+<style>
+  body {
+    margin: 0;
+    background: #0f0f0f;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 10px;
+    min-height: 100vh;
+  }
+
+  .container {
+    background: #fff;
+    color: #000;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    max-width: 480px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+  }
+
+  .plan-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .plan-info h2 {
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+
+  .plan-info p {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .checkout-wrapper {
+    width: 100%;
+    min-height: 700px;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-radius: 12px;
+  }
+
+  iframe {
+    width: 100%;
+    border: none;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>1 Month VIP</h1>
+    <div class="plan-info">
+      <h2>$35 – Month VIP</h2>
+      <p>Daily signals, VIP analysis and exclusive strategies.</p>
+    </div>
+    <div class="checkout-wrapper"
+         data-whop-checkout-plan-id="plan_fNkGlGqjbBK05"
+         data-whop-checkout-theme="light"
+         data-whop-checkout-hide-price="false"
+         data-whop-checkout-hide-submit-button="false">
+    </div>
+  </div>
+
+  <script>
+    // Dinamička visina iframe-a
+    const adjustIframeHeight = (iframe) => {
+      try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const height = doc.body.scrollHeight;
+        iframe.style.height = (height > 800 ? height : 800) + 'px';
+      } catch (e) {
+        iframe.style.height = '1200px';
+      }
+    };
+
+    const observeIframe = () => {
+      const iframe = document.querySelector('.checkout-wrapper iframe');
+      if (iframe) {
+        iframe.setAttribute('scrolling', 'yes');
+        iframe.style.overflow = 'auto';
+        iframe.addEventListener('load', () => adjustIframeHeight(iframe));
+        setInterval(() => adjustIframeHeight(iframe), 1500);
+      }
+    };
+
+    const observer = new MutationObserver(observeIframe);
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
+</body>
+</html>
