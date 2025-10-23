@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forex VIP Checkout</title>
+
+  <!-- Whop checkout -->
+  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      min-height: 100vh;
+      padding: 40px 10px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .plan {
+      background: #fff;
+      color: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 620px;
+      border: 2px solid #007bff25; /* tanji, providni plavi rub */
+      transition: 0.3s;
+    }
+
+    .plan:hover {
+      border-color: #00b4ff;
+      transform: translateY(-3px);
+    }
+
+    .plan-header {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      color: #fff;
+      padding: 15px 10px;
+    }
+
+    .plan-header h2 {
+      margin: 0;
+      font-size: 18px; /* manji font naslova */
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .plan-price {
+      font-size: 22px; /* manji font cene */
+      margin-top: 5px;
+      font-weight: 600;
+    }
+
+    .checkout-wrapper {
+      background: #fff;
+      color: #000;
+      border-top: 1px solid #eee;
+      width: 100%;
+      min-height: 700px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Forex VIP Access – Izaberi svoj plan</h1>
+
+  <div class="plans">
+    <!-- Nedeljno članstvo -->
+    <div class="plan">
+      <div class="plan-header">
+        <h2>Nedeljno članstvo</h2>
+        <div class="plan-price">$20</div>
+      </div>
+      <div class="checkout-wrapper"
+           data-whop-checkout-plan-id="plan_OR1FE5vztSaJi"
+           data-whop-checkout-theme="light"
+           data-whop-checkout-hide-price="false"
+           data-whop-checkout-hide-submit-button="false">
+      </div>
+    </div>
+
+    <!-- Mesečno članstvo -->
+    <div class="plan">
+      <div class="plan-header">
+        <h2>Mesečno članstvo</h2>
+        <div class="plan-price">$35</div>
+      </div>
+      <div class="checkout-wrapper"
+           data-whop-checkout-plan-id="plan_fNkGlGqjbBK05"
+           data-whop-checkout-theme="light"
+           data-whop-checkout-hide-price="false"
+           data-whop-checkout-hide-submit-button="false">
+      </div>
+    </div>
+
+    <!-- Doživotno članstvo -->
+    <div class="plan">
+      <div class="plan-header">
+        <h2>Doživotno članstvo</h2>
+        <div class="plan-price">$60</div>
+      </div>
+      <div class="checkout-wrapper"
+           data-whop-checkout-plan-id="plan_WUNVxEmRiKFWY"
+           data-whop-checkout-theme="light"
+           data-whop-checkout-hide-price="false"
+           data-whop-checkout-hide-submit-button="false">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 📏 Dinamičko podešavanje visine Whop iframe-ova
+    const adjustIframeHeight = (iframe) => {
+      try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const height = doc.body.scrollHeight;
+        iframe.style.height = (height > 1000 ? height : 1000) + 'px';
+      } catch (e) {
+        // ako je cross-origin, postavi default
+        iframe.style.height = '1300px';
+      }
+    };
+
+    const observeIframes = () => {
+      document.querySelectorAll('.checkout-wrapper iframe').forEach(iframe => {
+        iframe.setAttribute('scrolling', 'yes');
+        iframe.style.overflow = 'auto';
+        iframe.addEventListener('load', () => adjustIframeHeight(iframe));
+        setInterval(() => adjustIframeHeight(iframe), 1500);
+      });
+    };
+
+    const observer = new MutationObserver(observeIframes);
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
+</body>
+</html>
