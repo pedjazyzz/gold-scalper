@@ -25,23 +25,26 @@
   /* --- Hero Section --- */
   .hero {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 50px 20px; /* kraća visina */
     background: linear-gradient(135deg, #007bff, #00d4ff);
   }
 
+  .hero-inner {
+    max-width: 800px; /* uže od punog ekrana */
+    width: 100%;
+  }
+
   .hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 32px;
+    margin-bottom: 15px;
   }
 
   .hero p {
-    font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
 
   .btn-hero {
@@ -207,9 +210,11 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>🚀 Join Forex VIP Today!</h1>
-    <p>Get exclusive signals, expert analyses, and daily updates directly to your VIP channel. Choose the plan that suits you best and start profiting now!</p>
-    <a href="#plans" class="btn-hero">See Plans</a>
+    <div class="hero-inner">
+      <h1>🚀 Join Forex VIP Today!</h1>
+      <p>Get exclusive signals, expert analyses, and daily updates directly to your VIP channel. Choose the plan that suits you best and start profiting now!</p>
+      <a href="#plans" class="btn-hero">See Plans</a>
+    </div>
   </section>
 
   <!-- Benefits Section -->
