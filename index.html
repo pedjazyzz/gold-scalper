@@ -1,169 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forex VIP Checkout</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex VIP Plans</title>
+<style>
+  body {
+    margin: 0;
+    background: #0f0f0f;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 40px 10px;
+  }
 
-  <!-- Whop checkout -->
-  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+  h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      background: #0f0f0f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: "Poppins", sans-serif;
-      color: white;
-      min-height: 100vh;
-      padding: 40px 10px;
-    }
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 plans per row on mobile */
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 25px;
-      text-align: center;
-      color: #fff;
-    }
-
+  @media (min-width: 768px) {
     .plans {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 plana po redu na mobilnom */
-      gap: 20px;
-      width: 100%;
-      max-width: 1000px;
+      grid-template-columns: repeat(3, 1fr); /* 3 plans per row on tablet/desktop */
     }
+  }
 
-    @media (min-width: 768px) {
-      .plans {
-        grid-template-columns: repeat(3, 1fr); /* 3 plana po redu na tablet/desktop */
-      }
+  @media (max-width: 400px) {
+    .plans {
+      grid-template-columns: 1fr; /* 1 plan per row on very small screens */
     }
+  }
 
-    @media (max-width: 400px) {
-      .plans {
-        grid-template-columns: 1fr; /* 1 plan po redu za jako male ekrane */
-      }
-    }
+  .plan {
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid #007bff25;
+    transition: 0.3s;
+    text-align: center;
+  }
 
-    .plan {
-      background: #fff;
-      color: #000;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      border: 2px solid #007bff25;
-      transition: 0.3s;
-    }
+  .plan:hover {
+    border-color: #00b4ff;
+    transform: translateY(-3px);
+  }
 
-    .plan:hover {
-      border-color: #00b4ff;
-      transform: translateY(-3px);
-    }
+  .plan-header h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
 
-    .plan-header {
-      background: linear-gradient(135deg, #007bff, #00d4ff);
-      color: #fff;
-      padding: 15px 10px;
-    }
+  .plan-price {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
 
-    .plan-header h2 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
+  .plan-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #333;
+  }
 
-    .plan-price {
-      font-size: 22px;
-      margin-top: 5px;
-      font-weight: 600;
-    }
+  .buy-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+  }
 
-    .checkout-wrapper {
-      background: #fff;
-      color: #000;
-      border-top: 1px solid #eee;
-      width: 100%;
-      min-height: 1300px; /* dovoljno da se vidi JOIN dugme */
-      position: relative;
-      overflow: hidden;
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  .buy-btn:hover {
+    background: #00b4ff;
+  }
+</style>
 </head>
 <body>
-  <h1>🚀 Forex VIP Access – Izaberi svoj plan</h1>
+  <h1>🚀 Forex VIP Access – Choose Your Plan</h1>
 
   <div class="plans">
-    <!-- Nedeljno članstvo -->
     <div class="plan">
       <div class="plan-header">
-        <h2>Nedeljno članstvo</h2>
+        <h2>Weekly Membership</h2>
         <div class="plan-price">$20</div>
       </div>
-      <div class="checkout-wrapper"
-           data-whop-checkout-plan-id="plan_OR1FE5vztSaJi"
-           data-whop-checkout-theme="light"
-           data-whop-checkout-hide-price="false"
-           data-whop-checkout-hide-submit-button="false">
+      <div class="plan-description">
+        Access to Forex VIP channels for 7 days, daily signals, and exclusive analyses.
       </div>
+      <a href="plan_weekly.html" class="buy-btn">BUY</a>
     </div>
 
-    <!-- Mesečno članstvo -->
     <div class="plan">
       <div class="plan-header">
-        <h2>Mesečno članstvo</h2>
+        <h2>Monthly Membership</h2>
         <div class="plan-price">$35</div>
       </div>
-      <div class="checkout-wrapper"
-           data-whop-checkout-plan-id="plan_fNkGlGqjbBK05"
-           data-whop-checkout-theme="light"
-           data-whop-checkout-hide-price="false"
-           data-whop-checkout-hide-submit-button="false">
+      <div class="plan-description">
+        30 days access, daily signals, analyses, and VIP chat support.
       </div>
+      <a href="plan_monthly.html" class="buy-btn">BUY</a>
     </div>
 
-    <!-- Doživotno članstvo -->
     <div class="plan">
       <div class="plan-header">
-        <h2>Doživotno članstvo</h2>
+        <h2>Lifetime Membership</h2>
         <div class="plan-price">$60</div>
       </div>
-      <div class="checkout-wrapper"
-           data-whop-checkout-plan-id="plan_WUNVxEmRiKFWY"
-           data-whop-checkout-theme="light"
-           data-whop-checkout-hide-price="false"
-           data-whop-checkout-hide-submit-button="false">
+      <div class="plan-description">
+        Unlimited access to all VIP content, signals, and exclusive analyses forever.
       </div>
+      <a href="plan_lifetime.html" class="buy-btn">BUY</a>
     </div>
   </div>
-
-  <script>
-    // Fiksna visina iframe-a da se vidi JOIN dugme
-    const fixIframeHeight = () => {
-      document.querySelectorAll('.checkout-wrapper iframe').forEach(iframe => {
-        iframe.style.height = '1300px';
-        iframe.style.overflow = 'auto';
-        iframe.setAttribute('scrolling', 'yes');
-      });
-    };
-
-    const observer = new MutationObserver(fixIframeHeight);
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    setTimeout(fixIframeHeight, 3000); // fallback ako observer zakasni
-  </script>
 </body>
 </html>
