@@ -45,9 +45,8 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 620px;
-      border: 2px solid #007bff25; /* tanji, providni plavi rub */
+      justify-content: flex-start;
+      border: 2px solid #007bff25; /* providni plavi rub */
       transition: 0.3s;
     }
 
@@ -64,13 +63,13 @@
 
     .plan-header h2 {
       margin: 0;
-      font-size: 18px; /* manji font naslova */
+      font-size: 18px;
       font-weight: 500;
       letter-spacing: 0.3px;
     }
 
     .plan-price {
-      font-size: 22px; /* manji font cene */
+      font-size: 22px;
       margin-top: 5px;
       font-weight: 600;
     }
@@ -80,7 +79,7 @@
       color: #000;
       border-top: 1px solid #eee;
       width: 100%;
-      min-height: 700px;
+      min-height: 1350px; /* dovoljno da se vidi JOIN */
       position: relative;
       overflow: hidden;
     }
@@ -88,6 +87,17 @@
     iframe {
       border: none;
       width: 100%;
+      height: 100%;
+    }
+
+    /* Responsivnost za mobilne */
+    @media (max-width: 768px) {
+      .plans {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .checkout-wrapper {
+        min-height: 1200px;
+      }
     }
   </style>
 </head>
@@ -139,29 +149,19 @@
   </div>
 
   <script>
-    // 📏 Dinamičko podešavanje visine Whop iframe-ova
-    const adjustIframeHeight = (iframe) => {
-      try {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        const height = doc.body.scrollHeight;
-        iframe.style.height = (height > 1000 ? height : 1000) + 'px';
-      } catch (e) {
-        // ako je cross-origin, postavi default
-        iframe.style.height = '1300px';
-      }
-    };
-
-    const observeIframes = () => {
+    // Fiksna visina iframe-a da se vidi JOIN dugme
+    const fixIframeHeight = () => {
       document.querySelectorAll('.checkout-wrapper iframe').forEach(iframe => {
-        iframe.setAttribute('scrolling', 'yes');
+        iframe.style.height = '1350px';
         iframe.style.overflow = 'auto';
-        iframe.addEventListener('load', () => adjustIframeHeight(iframe));
-        setInterval(() => adjustIframeHeight(iframe), 1500);
+        iframe.setAttribute('scrolling', 'yes');
       });
     };
 
-    const observer = new MutationObserver(observeIframes);
+    const observer = new MutationObserver(fixIframeHeight);
     observer.observe(document.body, { childList: true, subtree: true });
+
+    setTimeout(fixIframeHeight, 3000); // fallback ako observer zakasni
   </script>
 </body>
 </html>
