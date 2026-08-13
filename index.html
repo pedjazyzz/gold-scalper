@@ -1,299 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forex VIP Access</title>
-<style>
-  body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-    line-height: 1.6;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gold (XAU/USD) market analysis, trading ideas and market updates delivered directly on Telegram." />
+  <title>Precision Gold Signals — XAU/USD Trading Insights</title>
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  <style>
+    :root {
+      --bg: #07110f;
+      --bg-soft: #0b1714;
+      --card: rgba(17, 35, 30, 0.78);
+      --card-strong: #10221d;
+      --text: #f5fbf8;
+      --muted: #9eb7ae;
+      --accent: #37f2a0;
+      --accent-2: #83ffd0;
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
 
-  h1, h2, h3 {
-    margin: 0;
-  }
+    * { box-sizing: border-box; }
 
-  /* --- Hero Section --- */
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px; /* kraća visina */
-    background: linear-gradient(135deg, #007bff, #00d4ff);
-  }
+    html { scroll-behavior: smooth; }
 
-  .hero-inner {
-    max-width: 800px; /* uže od punog ekrana */
-    width: 100%;
-  }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(55,242,160,.12), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(55,242,160,.06), transparent 25%),
+        linear-gradient(180deg, #06100d 0%, #07110f 55%, #081512 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-  .hero h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
+    a { color: inherit; text-decoration: none; }
 
-  .hero p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-  .btn-hero {
-    padding: 12px 25px;
-    background: #fff;
-    color: #007bff;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: 0.2s;
-  }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+    }
 
-  .btn-hero:hover {
-    background: #00d4ff;
-    color: #fff;
-  }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
 
-  /* --- Benefits Section --- */
-  .benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), #1baa70);
+      color: #04120c;
+      box-shadow: 0 8px 24px rgba(55,242,160,.22);
+      font-weight: 900;
+    }
 
-  .benefit-card {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 30px 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    transition: transform 0.3s, background 0.3s;
-  }
+    .nav-link {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-  .benefit-card:hover {
-    transform: translateY(-5px);
-    background: #222;
-  }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 54px;
+      align-items: center;
+      padding: 74px 0 94px;
+    }
 
-  .benefit-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #00d4ff;
-  }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border: 1px solid rgba(55,242,160,.2);
+      background: rgba(55,242,160,.07);
+      border-radius: 999px;
+      color: #b9f9df;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
 
-  .benefit-card p {
-    font-size: 14px;
-    color: #ccc;
-  }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(55,242,160,.08);
+    }
 
-  /* --- Plans Section --- */
-  .plans {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-  }
+    h1 {
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin: 0 0 22px;
+      max-width: 760px;
+    }
 
-  .plan {
-    background: #fff;
-    color: #000;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-    border: 2px solid #007bff25;
-    transition: 0.3s;
-    text-align: center;
-  }
+    .gradient-text {
+      background: linear-gradient(90deg, #f7fff9 0%, #86ffd2 60%, #37f2a0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-  .plan:hover {
-    border-color: #00b4ff;
-    transform: translateY(-3px);
-  }
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 0 30px;
+    }
 
-  .plan-header h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
 
-  .plan-price {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
 
-  .plan-description {
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #333;
-  }
+    .btn-primary {
+      background: var(--accent);
+      color: #06110c;
+      box-shadow: 0 12px 34px rgba(55,242,160,.22);
+    }
 
-  .buy-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #007bff;
-    color: #fff;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: 0.2s;
-  }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--accent-2);
+    }
 
-  .buy-btn:hover {
-    background: #00b4ff;
-  }
+    .btn-secondary {
+      border-color: var(--border);
+      color: #d7e7e0;
+      background: rgba(255,255,255,.03);
+    }
 
-  /* --- FAQ Section --- */
-  .faq {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-  }
+    .btn-secondary:hover { background: rgba(255,255,255,.06); }
 
-  .faq h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #00d4ff;
-  }
+    .microcopy {
+      margin-top: 14px;
+      color: #78948a;
+      font-size: 13px;
+    }
 
-  .faq-item {
-    background: #1a1a1a;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-  }
+    .mockup-wrap {
+      position: relative;
+    }
 
-  .faq-item h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
+    .glow {
+      position: absolute;
+      inset: 10% 6%;
+      background: rgba(55,242,160,.16);
+      filter: blur(70px);
+      border-radius: 50%;
+      z-index: 0;
+    }
 
-  .faq-item p {
-    font-size: 14px;
-    color: #ccc;
-  }
+    .phone {
+      position: relative;
+      z-index: 1;
+      width: min(390px, 100%);
+      margin-left: auto;
+      padding: 14px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, #16251f, #0b1512);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+    }
 
-  /* --- Footer --- */
-  footer {
-    background: #111;
-    color: #777;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-  }
+    .phone-inner {
+      min-height: 570px;
+      border-radius: 25px;
+      overflow: hidden;
+      background: #0a1512;
+      border: 1px solid rgba(255,255,255,.05);
+    }
 
-  footer a {
-    color: #00d4ff;
-    text-decoration: none;
-  }
+    .telegram-head {
+      padding: 22px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-  footer a:hover {
-    text-decoration: underline;
-  }
-</style>
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #44f3a5, #0f915d);
+      display: grid;
+      place-items: center;
+      color: #04110b;
+      font-weight: 900;
+    }
+
+    .tg-title { font-weight: 800; }
+    .tg-sub { color: var(--muted); font-size: 12px; }
+
+    .messages { padding: 18px; }
+
+    .message {
+      margin-bottom: 13px;
+      border-radius: 15px 15px 15px 4px;
+      padding: 14px 15px;
+      background: #12241e;
+      border: 1px solid rgba(255,255,255,.05);
+      color: #dcebe5;
+      font-size: 14px;
+    }
+
+    .message strong { color: #8dffd3; }
+
+    .chart {
+      height: 125px;
+      margin-top: 12px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        #0c1915;
+      background-size: 28px 28px;
+    }
+
+    .chart svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 0 0 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 36px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      background: rgba(55,242,160,.1);
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 54px 28px;
+      border-radius: 28px;
+      border: 1px solid rgba(55,242,160,.16);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(55,242,160,.12), transparent 45%),
+        linear-gradient(180deg, #0d201a, #0a1713);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 26px;
+    }
+
+    .disclaimer {
+      color: #6f877e;
+      font-size: 12px;
+      padding: 36px 0 18px;
+      max-width: 900px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 26px 0 36px;
+      color: #6f877e;
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 46px;
+      }
+      .phone {
+        margin: 10px auto 0;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-link {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(100% - 24px, 1120px); }
+      .hero { padding-bottom: 64px; }
+      h1 { font-size: 46px; }
+      .btn { width: 100%; }
+      .phone-inner { min-height: 520px; }
+      .section { padding: 58px 0; }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="container">
+    <nav class="nav">
+      <a href="#" class="brand">
+        <span class="brand-mark">AU</span>
+        <span>Precision Gold Signals</span>
+      </a>
+      <a class="nav-link" href="#telegram">Telegram Channel ↗</a>
+    </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>🚀 Join Forex VIP Today!</h1>
-      <p>Get exclusive signals, expert analyses, and daily updates directly to your VIP channel. Choose the plan that suits you best and start profiting now!</p>
-      <a href="#plans" class="btn-hero">See Plans</a>
-    </div>
-  </section>
+  <main>
+    <section class="container hero">
+      <div>
+        <div class="badge"><span class="dot"></span> XAU/USD market insights</div>
+        <h1>Trade Gold with more <span class="gradient-text">precision.</span></h1>
+        <p>
+          Daily Gold (XAU/USD) analysis, potential trade setups and market updates delivered directly on Telegram.
+          No noise — just clean market structure, key levels and disciplined risk management.
+        </p>
 
-  <!-- Benefits Section -->
-  <section class="benefits">
-    <div class="benefit-card">
-      <h3>Daily Signals</h3>
-      <p>Receive accurate Forex signals every day to maximize your profits.</p>
-    </div>
-    <div class="benefit-card">
-      <h3>VIP Chat Support</h3>
-      <p>Get direct access to expert advice in our exclusive chat.</p>
-    </div>
-    <div class="benefit-card">
-      <h3>Exclusive Analyses</h3>
-      <p>Daily market analyses and tips only available to VIP members.</p>
-    </div>
-    <div class="benefit-card">
-      <h3>Lifetime Updates</h3>
-      <p>For lifetime members, receive all future signals and content for free.</p>
-    </div>
-  </section>
-
-  <!-- Plans Section -->
-  <section id="plans" class="plans">
-    <div class="plan">
-      <div class="plan-header">
-        <h2>Weekly Membership</h2>
-        <div class="plan-price">$20</div>
+        <div class="cta-row">
+          <!-- Zamijeni #telegram svojim Telegram linkom -->
+          <a class="btn btn-primary" href="https://t.me/yourchannel" target="_blank" rel="noopener">
+            Join the Telegram →
+          </a>
+          <a class="btn btn-secondary" href="#benefiti">See what you get</a>
+        </div>
+        <div class="microcopy">Free access • No commitment • Educational content</div>
       </div>
-      <div class="plan-description">
-        Access to VIP channels for 7 days, daily signals, and exclusive analyses.
-      </div>
-      <a href="plan_weekly.html" class="buy-btn">BUY</a>
-    </div>
 
-    <div class="plan">
-      <div class="plan-header">
-        <h2>Monthly Membership</h2>
-        <div class="plan-price">$35</div>
-      </div>
-      <div class="plan-description">
-        30 days access, daily signals, analyses, and VIP chat support.
-      </div>
-      <a href="plan_monthly.html" class="buy-btn">BUY</a>
-    </div>
+      <div class="mockup-wrap" aria-label="Telegram preview">
+        <div class="glow"></div>
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="telegram-head">
+              <div class="avatar">AU</div>
+              <div>
+                <div class="tg-title">Precision Gold Signals</div>
+                <div class="tg-sub">XAU/USD analysis • Telegram</div>
+              </div>
+            </div>
 
-    <div class="plan">
-      <div class="plan-header">
-        <h2>Lifetime Membership</h2>
-        <div class="plan-price">$60</div>
-      </div>
-      <div class="plan-description">
-        Unlimited access to all VIP content, signals, and exclusive analyses forever.
-      </div>
-      <a href="plan_lifetime.html" class="buy-btn">BUY</a>
-    </div>
-  </section>
+            <div class="messages">
+              <div class="message">
+                <strong>XAU/USD — London session</strong><br>
+                Watching price reaction around a key liquidity zone. Waiting for confirmation before considering an entry.
+                <div class="chart">
+                  <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+                    <polyline points="0,92 35,83 62,90 95,61 126,71 156,44 184,55 216,29 245,41 300,18"
+                      fill="none" stroke="#37f2a0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
 
-  <!-- FAQ Section -->
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What do I get with the VIP membership?</h3>
-      <p>Daily signals, exclusive analyses, VIP chat support, and access to our private channel.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How long does each plan last?</h3>
-      <p>Weekly is 7 days, Monthly is 30 days, and Lifetime is unlimited access forever.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can I upgrade my plan later?</h3>
-      <p>Yes! You can upgrade from Weekly or Monthly to Lifetime anytime.</p>
-    </div>
-  </section>
+              <div class="message">
+                <strong>Gold market update</strong><br>
+                Volatility is building into the US session. Focus remains on patience, structure and confirmation.
+              </div>
 
-  <!-- Footer -->
+              <div class="message">
+                <strong>Risk first.</strong><br>
+                No trade is mandatory. Protecting capital comes before chasing profit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefiti" class="container section">
+      <div class="section-label">What you get</div>
+      <h2>Everything that matters. Nothing extra.</h2>
+      <p class="section-intro">
+        Built for traders who want a clearer way to follow Gold and understand the logic behind potential XAU/USD trade opportunities.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon">↗</div>
+          <h3>Gold market analysis</h3>
+          <p>Focused XAU/USD analysis with key levels, liquidity zones and session context.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">◎</div>
+          <h3>Trade ideas</h3>
+          <p>Potential Gold setups with a clear explanation of what we are watching and why.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Fast market updates</h3>
+          <p>Relevant updates when Gold structure, momentum or key intraday levels change.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="telegram" class="container section">
+      <div class="cta-box">
+        <div class="section-label">Telegram</div>
+        <h2>Trade Gold with a clearer plan.</h2>
+        <p>
+          Join Precision Gold Signals and get XAU/USD analysis and market updates directly on Telegram.
+        </p>
+        <a class="btn btn-primary" href="https://t.me/yourchannel" target="_blank" rel="noopener">
+          Open Telegram Channel →
+        </a>
+      </div>
+
+      <p class="disclaimer">
+        Risk Warning: Trading Gold, Forex and CFDs involves a high level of risk and may result in the loss of capital.
+        Content on this website and the associated Telegram channel is provided for educational and informational purposes only
+        and does not constitute financial or investment advice. Past performance does not guarantee future results.
+      </p>
+    </section>
+  </main>
+
   <footer>
-    <p>© 2025 Forex VIP. All rights reserved. | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+    <div class="container">
+      © 2026 Precision Gold Signals. All rights reserved.
+    </div>
   </footer>
-
 </body>
 </html>
